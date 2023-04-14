@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="road_running.Views.MLoginPage"
+             Title="會員登入">
+    <ContentPage.Content>
+
+        <StackLayout Margin="20">
+            <Image Source="runner.png" HorizontalOptions="CenterAndExpand" HeightRequest="100"></Image>
+            <Label Text="Let's RUN" FontSize="30" HorizontalOptions="Center"></Label>
+            <Label Text="Email" FontSize="Small" HorizontalOptions="Start" TextColor="#769fcd"></Label>
+            <Entry x:Name="email" ClearButtonVisibility="WhileEditing"/>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Label Text="Password" FontSize="Small" HorizontalOptions="Start" TextColor="#769fcd"></Label>
+                    <Entry x:Name="password" IsPassword="true" ClearButtonVisibility="WhileEditing"/>
+                </StackLayout>
+            </StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+            </Grid>
+            <StackLayout Orientation="Horizontal"  >
+                <Label HorizontalOptions="EndAndExpand">
+                </Label>
+                <Button x:Name="label1"
+                   Text="申請帳號"
+                   FontSize="15"
+                   VerticalOptions="Center"
+                   HorizontalOptions="End"
+                    BorderWidth="0"
+                    BackgroundColor="#0000ffff"
+                    TextColor="#395687"
+                    Margin="-5"
+                    Clicked="MEnroll"/>
+                <Button x:Name="label"
+                   Text="忘記密碼?"
+                   FontSize="15"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="End"
+                    BorderWidth="0"
+                    BackgroundColor="#0000ffff"
+                    TextColor="#395687"
+                    Margin="-5"
+                    Clicked="MForget"/>
+
+                <!--<Button Text="Logout with Gmail" CornerRadius="6" BackgroundColor="#FFFFFF" TextColor="Gray" FontAttributes="Bold"
+                         FontSize="10" x:Name="btnLogout" Clicked="Google_Logout" VerticalOptions="CenterAndExpand"  HorizontalOptions="CenterAndExpand"/>-->
+            </StackLayout>
+            <Button Text="登入" FontSize="15" CornerRadius="24" Clicked="MLogin" HorizontalOptions="Center" WidthRequest="200" Margin="20"/>
+
+                <Button Text="Login with Gmail" CornerRadius="24" BackgroundColor="#de5246" TextColor="#FFFFFF" FontAttributes="Bold"
+                         FontSize="15" x:Name="btnLogin" Clicked="Google_Login"  HorizontalOptions="Center" WidthRequest="200"/>
+          
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

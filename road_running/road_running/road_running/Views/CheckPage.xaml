@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:road_running.ViewModels"   
+             x:Class="road_running.Views.CheckPage" BackgroundColor="#f7fbfc" Title="報到">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="10, 20, 10, 0" />
+            <On Platform="Android, UWP" Value="10, 0" />
+        </OnPlatform>
+    </ContentPage.Padding>
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".05*" />
+                <RowDefinition Height=".05*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <!--<SearchBar x:Name="SearchText" Placeholder="搜尋活動...."  Text="{Binding SearchText, Mode=TwoWay}" Grid.Row="1"></SearchBar>-->
+            <Label Text="尚無報名資料" IsVisible="{Binding Text_Isvisible}" Grid.Row="2" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" Margin="10"/>
+            <ListView x:Name="GiftView" IsVisible="{Binding List_Isvisible}" Margin="0,30" RowHeight="80" Grid.Row="2" ItemsSource="{Binding ReturnCheck, Mode=TwoWay}" ItemTapped="Choose_Act" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ContentView Padding="10">
+                                <Frame BackgroundColor="#b9d7ea">
+                                    <StackLayout Orientation="Horizontal" VerticalOptions="Center">
+                                        <StackLayout>
+                                            <Label Text="{Binding Name}"
+                                           FontSize="18"
+                                           TextColor="#6E7C7C"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </ContentView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+        </Grid>
+    </ScrollView>
+</ContentPage>

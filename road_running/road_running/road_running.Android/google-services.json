@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "69953399729",
+    "project_id": "roadrunning-e37df",
+    "storage_bucket": "roadrunning-e37df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:69953399729:android:8a7f924df985e8dc086b90",
+        "android_client_info": {
+          "package_name": "com.lets.run"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "69953399729-409gdm0uul1u86qr138kssgn0196ac4k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lets.run",
+            "certificate_hash": "e700ab2bc1abd446cf9b0646aa8bd0fcb20357fc"
+          }
+        },
+        {
+          "client_id": "69953399729-d32nlgo3vsggf4s2ppmaed4ju82nq1fr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lets.run",
+            "certificate_hash": "e265598ff70d0cfd4ad24dcaaabfe2f2a1c2f0bb"
+          }
+        },
+        {
+          "client_id": "69953399729-kjmccghvsqlo2hftkdc4a22f7ei1vpet.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.lets.run",
+            "certificate_hash": "7568273fa61614198971efe5ca4afcb162009ef1"
+          }
+        },
+        {
+          "client_id": "69953399729-3b0lasrlfh6dsjmupjl7h1v9smr1k9qh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBbdUFPm9NlvZT29QlDFQz1ie5chz1zpA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "69953399729-3b0lasrlfh6dsjmupjl7h1v9smr1k9qh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

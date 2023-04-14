@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="road_running.Views.AffidavitPage"
+    Title="切結書">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#f7fbfc">
+            <ActivityIndicator x:Name="loading" Color="#769fcd" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsRunning="True" IsVisible="True"/>
+            <Frame x:Name="frame" BackgroundColor="White" Margin="10,40,10,40" IsVisible="False">
+                <StackLayout>
+                    <Label Text="切結書" HorizontalOptions="CenterAndExpand" TextColor="#022e57" FontSize="25" Margin="10"/>
+                    <ScrollView>
+                        <StackLayout>
+                            <Label x:Name="content" Text="" FontSize="Medium"/>
+                        </StackLayout>
+                    </ScrollView>
+                </StackLayout>
+            </Frame>
+            <Button x:Name="acept" Text="我同意並且遵守以上事項" TextColor="White" BackgroundColor="#fdb827" Margin="100,0,100,50" CornerRadius="20" Clicked="agree" IsVisible="False"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

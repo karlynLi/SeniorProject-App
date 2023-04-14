@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="road_running.Views.S_RecordPage1"
+             Title="已完成">
+
+    <ListView ItemsSource="{Binding GetRecordList}"
+              Margin="0,10" 
+              BackgroundColor="Transparent"
+              HasUnevenRows="True"
+              SeparatorVisibility="None"
+              IsPullToRefreshEnabled="True"
+              IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+              RefreshCommand="{Binding RefreshCommand}"
+              RefreshControlColor="{StaticResource Primary}"
+              SelectedItem="{Binding SelectedRecord, Mode=TwoWay}">
+        
+        <ListView.ItemTemplate >
+            <DataTemplate >
+                <ViewCell>
+                    <Grid Padding="10">
+                        <Frame Padding="10" 
+                               BackgroundColor="#b9d7ea" 
+                               CornerRadius="5">
+                            <StackLayout Orientation="Horizontal" >
+                                <StackLayout>
+                                    <Label Text="{Binding Name}"
+                                           FontSize="22"
+                                           VerticalOptions="StartAndExpand" />
+                                    <Label Text="{Binding GetDate}"
+                                           FontSize="16"
+                                           VerticalOptions="CenterAndExpand" />
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

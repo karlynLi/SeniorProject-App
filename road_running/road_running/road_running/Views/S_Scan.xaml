@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="road_running.Views.S_Scan"
+    Title="掃描QRcode">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="兌換禮品" Command="{Binding LaunchGiftScanner}" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" WidthRequest="300" HeightRequest="70" CornerRadius="10" FontSize="30" Margin="40"/>
+            <Button Text="報到" Command="{Binding LaunchSignUpScanner}" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" WidthRequest="300" HeightRequest="70" CornerRadius="10" FontSize="30" Margin="40"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

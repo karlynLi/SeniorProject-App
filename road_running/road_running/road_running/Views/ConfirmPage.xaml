@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="road_running.Views.ConfirmPage"
+    Title="報名確認">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#f7fbfc">
+            <StackLayout BackgroundColor="#f7fbfc" Margin="20">
+                <Label Text="報名資料" TextColor="#022e57" FontSize="25" FontAttributes="Bold"/>
+                <BoxView HeightRequest="1" Color="#c0c0c0" />
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{Binding User_Name}" TextColor="#022e57" HorizontalOptions="StartAndExpand" FontSize="20" FontAttributes="Bold"/>
+                    <Label Text="{Binding User_Identity}" TextColor="#022e57" HorizontalOptions="EndAndExpand" FontSize="20" FontAttributes="Bold"/>
+                </StackLayout>
+                <BoxView HeightRequest="1" Color="#c0c0c0" />
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{Binding Group_Name}" TextColor="#022e57" HorizontalOptions="StartAndExpand" FontSize="20" FontAttributes="Bold"/>
+                    <Label Text="{Binding Cost}" TextColor="#022e57" HorizontalOptions="EndAndExpand" FontSize="20" FontAttributes="Bold"/>
+                </StackLayout>
+                <CollectionView ItemsSource="{Binding GiftList}" HeightRequest="{Binding GiftListHeight}"
+                    ItemsLayout="VerticalList">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Orientation="Horizontal" Margin="2" HeightRequest="25">
+                                <Label Text="{Binding showstring}" TextColor="#022e57" HorizontalOptions="Start" FontSize="20" FontAttributes="Bold"/>
+                                <Label Text="$0" TextColor="#022e57" HorizontalOptions="EndAndExpand" FontSize="20" FontAttributes="Bold"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <BoxView HeightRequest="1" Color="#c0c0c0" />
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="小計" TextColor="#022e57" HorizontalOptions="StartAndExpand" FontSize="20" FontAttributes="Bold"/>
+                    <Label Text="{Binding Cost}" TextColor="#022e57" HorizontalOptions="EndAndExpand" FontSize="20" FontAttributes="Bold"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="手續費" TextColor="#022e57" HorizontalOptions="StartAndExpand" FontSize="20" FontAttributes="Bold"/>
+                    <Label Text="$0" TextColor="#022e57" HorizontalOptions="EndAndExpand" FontSize="20" FontAttributes="Bold"/>
+                </StackLayout>
+                <BoxView HeightRequest="1" Color="#c0c0c0" />
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="訂單總和" TextColor="#022e57" HorizontalOptions="StartAndExpand" FontSize="20" FontAttributes="Bold"/>
+                    <Label Text="{Binding Cost}" TextColor="#022e57" HorizontalOptions="EndAndExpand" FontSize="20" FontAttributes="Bold"/>
+                </StackLayout>
+                <BoxView HeightRequest="1" Color="#c0c0c0" />
+                <Label Text="繳費帳號：" TextColor="#022e57" FontSize="20" FontAttributes="Bold"/>
+                <StackLayout Orientation="Horizontal" Margin="20,0,0,0">
+                    <Label Text="分行代碼" TextColor="#022e57" HorizontalOptions="StartAndExpand" FontSize="20" FontAttributes="Bold"/>
+                    <Label Text="000" TextColor="#022e57" HorizontalOptions="EndAndExpand" FontSize="20" FontAttributes="Bold"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="20,0,0,0">
+                    <Label Text="帳號" TextColor="#022e57" HorizontalOptions="StartAndExpand" FontSize="20" FontAttributes="Bold"/>
+                    <Label Text="xxxxxxxxxx" TextColor="#022e57" HorizontalOptions="EndAndExpand" FontSize="20" FontAttributes="Bold"/>
+                </StackLayout>
+            </StackLayout>
+            <Button Text="確認報名資訊" Command="{Binding UpdateCommand}" TextColor="White" FontSize="20" BackgroundColor="#fdb827" Margin="20,0,20,20" CornerRadius="20" VerticalOptions="EndAndExpand"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="road_running.Views.S_SetBecaon"
+             BackgroundColor="#f7fbfc"
+             Title="新增Beacon位置">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand"  Margin="30, 80">
+            <Label Text="經過點編號"  FontSize="16" VerticalOptions="Center"></Label>
+            <StackLayout Orientation="Horizontal" Margin="0,10,0,30">
+                <Entry x:Name="pass_point" Text="" IsReadOnly="True" HorizontalOptions="FillAndExpand"></Entry>
+                <Button Text="掃描" VerticalOptions="Center" HeightRequest="40" Clicked="pass_point_scanner" CornerRadius="26"></Button>
+            </StackLayout>
+            <Label Text="Beacon編號"  FontSize="16" VerticalOptions="Center"></Label> 
+            <StackLayout Orientation="Horizontal" Margin="0,10,0,30">
+                <Entry x:Name="beacon" Text="" IsReadOnly="True" HorizontalOptions="FillAndExpand"></Entry>
+                <Button Text="掃描" VerticalOptions="Center" HeightRequest="40" Clicked="beacon_scanner" CornerRadius="26"></Button>
+            </StackLayout>
+            <Button Text="新增" FontSize="Medium" HorizontalOptions="Center" WidthRequest="150" Clicked="Button_Clicked" CornerRadius="26"></Button>
+        </StackLayout>
+        <!--<ScrollView VerticalOptions="Center">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".5*"></RowDefinition>
+                    <RowDefinition Height=".8*"></RowDefinition>
+                    <RowDefinition Height=".8*"></RowDefinition>
+                    <RowDefinition Height=".8*"></RowDefinition>
+                    <RowDefinition Height=".8*"></RowDefinition>
+                    <RowDefinition Height=".8*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height=".7*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Text="新增Beacon位置" FontSize="30" HorizontalTextAlignment="Center"></Label>
+                <Label Text="經過點編號" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" FontSize="16" VerticalOptions="Center"></Label>
+                <Entry Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" IsReadOnly="True" ></Entry>
+                <Button Text="掃描" Grid.Row="3" Grid.Column="4" VerticalOptions="Center" HeightRequest="34"></Button>
+                <Label Text="Beacon編號" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="4" FontSize="16" VerticalOptions="Center"></Label>
+                <Entry Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" IsReadOnly="True"></Entry>
+                <Button Text="掃描" Grid.Row="5" Grid.Column="4" VerticalOptions="Center" HeightRequest="34"></Button>
+                <Button Text="新增" FontSize="Medium" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="4"></Button>
+                
+
+
+            </Grid>
+        </ScrollView>-->
+    </ContentPage.Content>
+</ContentPage>

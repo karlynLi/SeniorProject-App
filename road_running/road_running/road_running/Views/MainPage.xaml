@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    
+    x:Class="road_running.Views.MainPage"
+    Title="活動資訊">
+    <ContentPage.ToolbarItems>
+        <!--<ToolbarItem Text="登入" Clicked="GoLogin"/>-->
+    </ContentPage.ToolbarItems>
+    <!--父StackLayout(垂直方向)-->
+    <RelativeLayout BackgroundColor="White" x:Name="relativelayout">
+        <StackLayout BackgroundColor="#f7fbfc"
+                     RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}" RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}">
+            <!--搜尋-->
+            <SearchBar x:Name="search" Text="{Binding SearchText, Mode=TwoWay}" Placeholder="搜尋..." Margin="0" TextChanged="SearchBar_TextChanged"/>
+            <!--開關-->
+            <Grid Margin="10,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="7*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Frame BorderColor="Black" Padding="5" HeightRequest="40" CornerRadius="10">
+                    <!--子StackLayout(水平方向:Horizontal)-->
+                    <StackLayout Orientation="Horizontal"
+                                 Spacing="15">
+                        <Label Text="顯示報名當中的活動"
+                               FontSize="Medium"
+                               VerticalOptions="Center"
+                               HorizontalOptions="StartAndExpand" HeightRequest="30"/> 
+                        <Switch IsToggled="{Binding IsSigningUp, Mode=TwoWay}"  OnColor="#769fcd" ThumbColor="White"/>
+                    </StackLayout>
+                </Frame>
+                <ImageButton BackgroundColor="#f7fbfc" Source="filter.png" Grid.Column="1" HeightRequest="5" WidthRequest="5" Clicked="OnButtonClicked"/>
+            </Grid>
+            <!--清單-->
+            <StackLayout>
+                <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" Color="#769fcd" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                <Label Text="{Binding TextContent}"  IsVisible="{Binding TextIsVisible}" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" Margin="10"/>
+                    <ListView ItemsSource="{Binding Activitys}"
+                    x:Name="ActivityListView"
+                    HasUnevenRows="true"
+                    SelectedItem="{Binding objItemSelected, Mode=TwoWay}"
+                    ItemTapped="OnListViewItemTapped"
+                    IsVisible="{Binding List_IsVisible}"
+                    >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ContentView Padding="5">
+                                    <StackLayout>
+                                   <!--viewcell裡面的image要binding圖片的時候
+                                    記得來源的變數型態必須是ImageSource喔
+                                    並非是image-->
+                                    <!--這個寫法比較適合實務上使用，因為
+                                    實務上的圖片大多來自於資料庫的二進位byte[]資料-->
+                                    <Frame BackgroundColor="#f7fbfc">
+                                        <Grid >
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="*"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <Image
+                                                Source="{Binding ImageUrl}"
+                                                Aspect="AspectFill"
+                                                HeightRequest="60"
+                                                WidthRequest="60" />
+
+                                            <!--如果app是要連線網際網路上的http圖片的話
+                                            就這樣寫就可以了-->
+                                            <!--<Image Source="{Binding ImageUrl}" />-->
+                                            <StackLayout Grid.Row="1">
+                                                <Grid>
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*"/>
+                                                        <RowDefinition Height="*"/>
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="4*"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label
+                                                    Grid.Row="0"
+                                                    Text="{Binding Name}"
+                                                    FontAttributes="Bold" />
+                                                    <Label
+                                                    Grid.Row="1"
+                                                    Text="{Binding Location}"
+                                                    VerticalOptions="End" />
+                                                    <Label Grid.RowSpan="2" Grid.Column="1" Text="報名中" BackgroundColor="#f7a440" TextColor="White" FontSize="15" VerticalOptions="CenterAndExpand" HorizontalOptions="End" IsVisible="{Binding isVisible}" Padding="5"/>
+                                                </Grid>
+                                                <Label
+                                                    Text="{Binding Date}"/>
+                                                <StackLayout Orientation="Horizontal">
+                                                    <Label Text="{Binding Startdate}"/>
+                                                    <Label Text="~"/>
+                                                    <Label Text="{Binding Enddate}"/>
+                                                </StackLayout>
+                                                <Label Text="{Binding GroupName}"/>
+                                            </StackLayout>
+                                        </Grid>
+                                    </Frame>
+                                </StackLayout>
+                                </ContentView>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </StackLayout>
+                           <!--RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=0}"-->
+        <Frame x:Name="BBB" HasShadow="True" BackgroundColor="Black" Opacity="0.4" IsVisible="false"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=0}">
+        </Frame>
+
+    <!--下面篩選頁面(BottomSheet)-->
+        <Frame x:Name="BottomSheet" CornerRadius="20" HasShadow="True" BackgroundColor="LightGray" Padding="10,5" BorderColor="LightGray"
+                   RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=0}"
+                   RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=1,Constant=0}"
+                   RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=1,Constant=0}">
+            <Frame.GestureRecognizers>
+                <PanGestureRecognizer PanUpdated="OnPanelUpdated" />
+            </Frame.GestureRecognizers>
+            <StackLayout VerticalOptions="StartAndExpand" HorizontalOptions="Fill">
+                <BoxView HeightRequest="5" CornerRadius="2" BackgroundColor="Gray" HorizontalOptions="CenterAndExpand" WidthRequest="50" Margin="0,10,0,10"></BoxView>
+                    <!--Place your bottom sheet layout here-->
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="6*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Text="依時間" FontSize="Medium" TextColor="#022e57" Grid.Row="0" Grid.Column="0" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Margin="20,0,0,0"/>
+                        <Label Text="依地區" FontSize="Medium" TextColor="#022e57" Grid.Row="1" Grid.Column="0" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Margin="20,0,0,0"/>
+                        <Label Text="依里程數" FontSize="Medium" TextColor="#022e57" Grid.Row="2" Grid.Column="0" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" Margin="20,0,0,0"/>
+                        <Picker x:Name="MonthPicker"
+                                Title="選擇月份"
+                                ItemsSource="{Binding GetMonths}"
+                                ItemDisplayBinding="{Binding Month}"
+                                SelectedItem="{Binding SelectedMonth, Mode=TwoWay}"
+                                TitleColor="Black" Grid.Row="0" Grid.Column="1">
+                        </Picker>
+                        <Picker x:Name="CityPicker"
+                                Title="選擇縣市"
+                                ItemsSource="{Binding GetCities}"
+                                ItemDisplayBinding="{Binding Name}"
+                                SelectedItem="{Binding SelectedCity, Mode=TwoWay}"
+                                TitleColor="Black" Grid.Row="1" Grid.Column="1">
+                        </Picker>
+                        <Picker x:Name="KmPicker"
+                                Title="選擇里程"
+                                SelectedItem="{Binding SelectedKm, Mode=TwoWay}"
+                                TitleColor="Black" Grid.Row="2" Grid.Column="1">
+                            <Picker.ItemsSource>
+                                    <x:Array Type="{x:Type x:String}">
+                                    <x:String>10K以下</x:String>
+                                    <x:String>10K~20K</x:String>
+                                    <x:String>20K以上</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Text="清除" Command="{Binding PickerCommand}" CommandParameter="clear" Grid.Column="0" CornerRadius="15" CharacterSpacing="10" BackgroundColor="#bdbdbd"/>
+                        <Button Text="確定" Command="{Binding PickerCommand}" CommandParameter="confirm" Grid.Column="1" CornerRadius="15" CharacterSpacing="10" BackgroundColor="#fdb827" Clicked="confirmClicked"/>
+                    </Grid>
+                </Grid>
+            </StackLayout>
+        </Frame>
+    </RelativeLayout>
+</ContentPage>

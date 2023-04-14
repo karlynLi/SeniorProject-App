@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="road_running.Views.RecordDetailPage">
+    
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="StartAndExpand">
+            <Grid Padding="10" Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label Text="{Binding Name}" Grid.Row="0" FontSize="30" TextColor="Black" FontAttributes="Bold"/>
+                <Label Text="組別"  Grid.Row="1" FontSize="24" FontAttributes="Bold" TextColor="{StaticResource Primary}"/>
+                <Label Text="{Binding Group_name}" Grid.Row="2" FontSize="20"/>
+                <Label Text="報到時間"  Grid.Row="3" FontSize="24" FontAttributes="Bold" TextColor="{StaticResource Primary}"/>
+                <Label Text="{Binding Time}" Grid.Row="4" FontSize="20"/>
+                <Label Text="報到地點"  Grid.Row="5" FontSize="24" FontAttributes="Bold" TextColor="{StaticResource Primary}"/>
+                <Label Text="{Binding Place}" Grid.Row="6" FontSize="20"/>
+                <Label Text="完賽名次"  Grid.Row="7" FontSize="24" FontAttributes="Bold" TextColor="{StaticResource Primary}"/>
+                <Label Text="{Binding Grade}" Grid.Row="8" FontSize="20"/>
+                <Label Text="完賽成績"  Grid.Row="9" FontSize="24" FontAttributes="Bold" TextColor="{StaticResource Primary}"/>
+                <Label Text="{Binding Complete_time}" Grid.Row="10" FontSize="20"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

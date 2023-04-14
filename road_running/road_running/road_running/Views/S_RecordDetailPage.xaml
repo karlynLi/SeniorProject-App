@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="road_running.Views.S_RecordDetailPage" 
+             Title="活動詳情" 
+             BackgroundColor="#f7fbfc">
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Padding="10" Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Label x:Name ="Name" Text="{Binding Name}" Grid.Row="0" FontSize="30" TextColor="Black" FontAttributes="Bold"/>
+                <Label Text="組別"  Grid.Row="1" FontSize="24" FontAttributes="Bold" TextColor="{StaticResource Primary}"/>
+                <Label Text="{Binding Work_name}" Grid.Row="2" FontSize="20"/>
+                <Label Text="集合時間"  Grid.Row="3" FontSize="24" FontAttributes="Bold" TextColor="{StaticResource Primary}"/>
+                <Label Text="{Binding Assembletime}" Grid.Row="4" FontSize="20"/>
+                <Label Text="集合地點"  Grid.Row="5" FontSize="24" FontAttributes="Bold" TextColor="{StaticResource Primary}"/>
+                <Label Text="{Binding Assembleplace}" Grid.Row="6" FontSize="20"/>
+                <Label Text="負責人"  Grid.Row="7" FontSize="24" FontAttributes="Bold" TextColor="{StaticResource Primary}"/>
+                <Label Text="{Binding Leader}" Grid.Row="8" FontSize="20"/>
+                <Label Text="Line 群組"  Grid.Row="9" FontSize="24" FontAttributes="Bold" TextColor="{StaticResource Primary}"/>
+                <Label Text="{Binding Line}" Grid.Row="10" FontSize="20"/>
+                <Button Text="工作內容" Grid.Row="11" BackgroundColor="{StaticResource Primary}" FontSize="18" CornerRadius="5" Clicked="Button_Clicked"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

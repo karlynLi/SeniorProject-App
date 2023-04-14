@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="road_running.Views.EnrollPage"
+             Title="申請會員">
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="Center" BackgroundColor="#f7fbfc">
+            <StackLayout Margin="20,40">
+                <Label Text="姓名"></Label>
+                <Entry x:Name="Name" FontSize="20"/>
+                <StackLayout Orientation="Horizontal"  >
+                    
+                    <StackLayout HorizontalOptions="FillAndExpand">
+                        <Label Text="信箱" ></Label>
+                        <Entry x:Name="Email" FontSize="20"/>
+                    </StackLayout>
+                    <Button Text="傳送驗證碼" x:Name="code1" HeightRequest="20" Margin="10" Clicked="Check_mail"/>
+                </StackLayout>
+                <!--<Label Text="驗證碼" ></Label>
+                <Entry x:Name="Captcha" FontSize="20"/>-->
+                <StackLayout Orientation="Horizontal">
+                    <StackLayout HorizontalOptions="FillAndExpand">
+                        <Label Text="驗證碼" ></Label>
+                        <Entry x:Name="Captcha" IsReadOnly="True" FontSize="20"/>
+                    </StackLayout>
+                    <Button x:Name="Verify" Text="驗證" HeightRequest="20" Margin="10" Clicked="Check_captcha"/>
+                </StackLayout>
+                <Label Text="密碼"></Label>
+                <Entry x:Name="Pass1" IsPassword="True" Placeholder="至少各一個大小寫字母，總長度>8" />
+                <Label Text="再輸入一次密碼"></Label>
+                <Entry x:Name="Pass2" IsPassword="True" />
+                <Label Text="電話"></Label>
+                <Entry x:Name="Phone" FontSize="20"/>
+                <Label Text="身分證字號"></Label>
+                <Entry x:Name="IdCard" FontSize="20"/>
+                <Label Text="生日"></Label>
+                <DatePicker x:Name="Birth" Format="yyyy-MM-dd" DateSelected="Choose_birth"></DatePicker>
+                <Label Text="地址"></Label>
+                <Entry x:Name="Address" FontSize="20"/>
+                <Label Text="緊急聯絡人姓名" ></Label>
+                <Entry x:Name="Contact_name" FontSize="20"/>
+                <Label Text="緊急聯絡人電話"></Label>
+                <Entry x:Name="Contact_phone" FontSize="20"/>
+                <Label Text="與會員之關係"></Label>
+                <Entry x:Name="Relation" FontSize="20"/>
+                <Button Grid.Row="24" x:Name="enroll" Text="註冊" FontSize="20" Clicked="EnrollClicked" HorizontalOptions="Center" WidthRequest="200" Margin="0,20,0,0" IsEnabled="False"/>
+                <StackLayout Orientation="Horizontal" Margin="0,20">
+                    <Label Text="已有帳號了?" VerticalOptions="Center" HorizontalOptions="EndAndExpand"></Label>
+                    <Button Grid.Row="25" TextColor="Black" BackgroundColor="Transparent" Text="登入" FontSize="13" VerticalOptions="Center" HorizontalOptions="StartAndExpand" Margin="-18" Clicked="Log"/>
+                </StackLayout>
+            </StackLayout>
+            <!--<Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".15*"></RowDefinition>
+                <RowDefinition Height=".2*"></RowDefinition>
+                <RowDefinition Height=".1*"></RowDefinition>
+                <RowDefinition Height=".14*"></RowDefinition>
+                <RowDefinition Height=".1*"></RowDefinition>
+                <RowDefinition Height=".14*"></RowDefinition>
+                <RowDefinition Height=".1*"></RowDefinition>
+                <RowDefinition Height=".14*"></RowDefinition>
+                <RowDefinition Height=".1*"></RowDefinition>
+                <RowDefinition Height=".14*"></RowDefinition>
+                <RowDefinition Height=".1*"></RowDefinition>
+                <RowDefinition Height=".14*"></RowDefinition>
+                <RowDefinition Height=".1*"></RowDefinition>
+                <RowDefinition Height=".14*"></RowDefinition>
+                <RowDefinition Height=".1*"></RowDefinition>
+                <RowDefinition Height=".14*"></RowDefinition>
+                <RowDefinition Height=".1*"></RowDefinition>
+                <RowDefinition Height=".14*"></RowDefinition>
+                <RowDefinition Height=".1*"></RowDefinition>
+                <RowDefinition Height=".14*"></RowDefinition>
+                <RowDefinition Height=".1*"></RowDefinition>
+                <RowDefinition Height=".14*"></RowDefinition>
+                <RowDefinition Height=".1*"></RowDefinition>
+                <RowDefinition Height=".14*"></RowDefinition>
+                <RowDefinition Height=".2*"></RowDefinition>
+                <RowDefinition Height=".3*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="1" Grid.RowSpan="1" Grid.Column="1" Grid.ColumnSpan="2" Text="申請會員" FontSize="30" HorizontalTextAlignment="Start"></Label>
+            <Label Text="姓名" Grid.Row="2" Grid.Column="1"></Label>
+            <Entry x:Name="Name" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="4" FontSize="20"/>
+            <Label Text="信箱" Grid.Row="4" Grid.Column="1"></Label>
+            <Entry x:Name="Email" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="4" FontSize="20"/>
+            <Label Text="密碼" Grid.Row="6" Grid.Column="1"></Label>
+            <Entry x:Name="Pass1" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="4" FontSize="20" IsPassword="True"/>
+            <Label Text="再輸入一次密碼" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="3"></Label>
+            <Entry x:Name="Pass2" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="4" FontSize="20" IsPassword="True"/>
+            <Label Text="電話" Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="3"></Label>
+            <Entry x:Name="Phone" Grid.Row="11" Grid.Column="1" Grid.ColumnSpan="4" FontSize="20"/>
+            <Label Text="身分證字號" Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="3"></Label>
+            <Entry x:Name="IdCard" Grid.Row="13" Grid.Column="1" Grid.ColumnSpan="4" FontSize="20"/>
+            <Label Text="生日" Grid.Row="14" Grid.Column="1"></Label>
+            <DatePicker x:Name="Birth" Grid.Row="15" Grid.Column="1" Grid.ColumnSpan="4" Format="yyyy-MM-dd"></DatePicker>
+            <Label Text="地址" Grid.Row="16" Grid.Column="1"></Label>
+            <Entry x:Name="Address" Grid.Row="17" Grid.Column="1" Grid.ColumnSpan="4" FontSize="20"/>
+            <Label Text="緊急聯絡人姓名" Grid.Row="18" Grid.Column="1" Grid.ColumnSpan="2"></Label>
+            <Entry x:Name="Contact_name" Grid.Row="19" Grid.Column="1" Grid.ColumnSpan="4" FontSize="20"/>
+            <Label Text="緊急聯絡人電話" Grid.Row="20" Grid.Column="1" Grid.ColumnSpan="2"></Label>
+            <Entry x:Name="Contact_phone" Grid.Row="21" Grid.Column="1" Grid.ColumnSpan="4" FontSize="20"/>
+            <Label Text="與會員之關係" Grid.Row="22" Grid.Column="1" Grid.ColumnSpan="2"></Label>
+            <Entry x:Name="Relation" Grid.Row="23" Grid.Column="1" Grid.ColumnSpan="4" FontSize="20"/>
+            <Button Grid.Row="24" Grid.Column="1" Grid.ColumnSpan="4" Text="註冊" FontSize="20" Clicked="EnrollClicked"/>
+            <Label Text="已有帳號了?" Grid.Row="25" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="End"></Label>
+            <Button Grid.Row="25" Grid.Column="3" TextColor="Black" BackgroundColor="Transparent" Text="登入" FontSize="13" VerticalOptions="Center" HorizontalOptions="StartAndExpand" Margin="-18" Clicked="Log"/>
+                <Label x:Name="test"></Label>
+                <Image Source="dog.png" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2"/>
+        </Grid>-->
+    </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

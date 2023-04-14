@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:road_running.Views"
+             x:Class="road_running.Views.AboutPage"
+             xmlns:model="clr-namespace:road_running.Models"
+             xmlns:vm="clr-namespace:road_running.ViewModels" xmlns:LocalImage="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             Title="修改個人資料">
+    
+    <!--<ContentPage.BindingContext>
+        <vm:AboutViewModel />
+    </ContentPage.BindingContext>-->
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#89A3B2</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView BackgroundColor="#f7fbfc">
+        <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=".1*" />
+            <RowDefinition Height="1.2*" />
+            <RowDefinition Height=".5*" />
+            <RowDefinition Height=".4*" />
+            <RowDefinition Height=".5*" />
+            <RowDefinition Height=".4*" />
+            <RowDefinition Height=".5*" />
+            <RowDefinition Height=".4*" />
+            <RowDefinition Height=".5*" />
+            <RowDefinition Height=".4*" />
+            <RowDefinition Height=".5*" />
+            <RowDefinition Height=".4*" />
+            <RowDefinition Height=".5*" />
+            <RowDefinition Height=".4*" />
+            <RowDefinition Height=".5*" />
+            <RowDefinition Height=".4*" />
+            <RowDefinition Height=".5*" />
+            <RowDefinition Height=".4*" />
+            <RowDefinition Height=".5*" />
+            <RowDefinition Height=".4*" />
+            <RowDefinition Height=".5*" />
+            <RowDefinition Height="0.01*" />
+            <RowDefinition Height=".6*" />
+            <RowDefinition Height=".6*" />
+            </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <StackLayout BackgroundColor="{StaticResource Primary}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill" Grid.Column="0" Grid.ColumnSpan="6" Grid.Row="0" Grid.RowSpan="3">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                    <ContentView  Grid.Row="1" Grid.Column="1" >
+                        <!--<Image x:Name="Imageresult" VerticalOptions="Center" HorizontalOptions="Center" HeightRequest="100"/>-->
+                        <LocalImage:CircleImage
+                        x:Name="Imageresult"
+                        Source="{Binding Photo}"
+                        Aspect="AspectFit"
+                        BorderColor="#0F0A3C"
+                        BorderThickness="0.1"
+                        BackgroundColor="Transparent"
+                        HeightRequest="150"
+                        WidthRequest="90"
+                        />
+                    </ContentView>
+                </StackLayout>
+            </StackLayout>
+        <Button Text="取消" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="23" FontSize="20" TextColor="White" Clicked="Cancel_edit" ></Button>
+        <Button Text="儲存" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="22" FontSize="20" TextColor="White" Clicked="Store_edit"></Button>
+        <Button BackgroundColor="Transparent" Text="編輯照片" TextColor="#456268" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Clicked="Choose_image" HeightRequest="10" ></Button>
+        <!--<StackLayout Orientation="Vertical" Padding="30,24,30,24" Spacing="10">-->
+        <Label Text="姓名" TextColor="#769fcd" FontSize="14" Grid.Column="1" Grid.Row="3" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="Start"/>
+        <Entry x:Name="GetName" Text="{Binding Name}" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="4"></Entry>
+        <Label Text="Email" TextColor="#769fcd" FontSize="14" Grid.Column="1" Grid.Row="5" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="Start"/>
+        <Entry x:Name="Mail" IsReadOnly="True" Text="{Binding Email}" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="6"></Entry>
+        <Label Text="電話" TextColor="#769fcd" FontSize="14" Grid.Column="1" Grid.Row="7" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="Start"/>
+        <Entry x:Name="GetPhone" Text="{Binding Phone}" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="8"></Entry>
+        <Label Text="身分證字號" TextColor="#769fcd" FontSize="14" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="9" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="Start"/>
+        <Entry x:Name="Idcard" Text="{Binding Id_card}" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="10"></Entry>
+        <Label Text="生日" TextColor="#769fcd" FontSize="14" Grid.Column="1" Grid.Row="11" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="Start"/>
+        <DatePicker x:Name="Birth" Date="{Binding Birthday}"  Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="12" Format="yyyy-MM-dd"></DatePicker>
+        <!--<Entry Grid.Column="1" Grid.Row="7"></Entry>-->
+        <Label Text="住址" TextColor="#769fcd" FontSize="14" Grid.Column="1" Grid.Row="13" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="Start"/>
+            <Entry x:Name="GetAddress" Text="{Binding Address}" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="14"></Entry>
+            <Label Text="緊急聯絡人姓名" TextColor="#769fcd" FontSize="14" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="15" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="Start"/>
+        <Entry x:Name="GetContactName" Text="{Binding Contact_name}" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="16"></Entry>
+        <Label Text="緊急聯絡人電話" TextColor="#769fcd" FontSize="14" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="17" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="Start"/>
+        <Entry x:Name="GetContactPhone" Text="{Binding Contact_phone}" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="18"></Entry>
+        <Label Text="與會員之關係" TextColor="#769fcd" FontSize="14" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="19" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="Start"/>
+        <Entry x:Name="GetRelation" Text="{Binding Relation}" Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="20"></Entry>  
+            <!--<Button Margin="0,10,0,0" Text="Learn more"
+                        Command="{Binding OpenWebCommand}"
+                        BackgroundColor="{StaticResource Primary}"
+                        TextColor="White" />-->
+        <!--</StackLayout>-->
+    </Grid>
+    </ScrollView>
+</ContentPage>

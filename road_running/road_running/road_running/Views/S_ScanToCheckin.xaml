@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="road_running.Views.S_ScanToCheckin"
+    Title="工作人員報到">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center">
+            <Button Text="工作人員報到" Command="{Binding LaunchS_CheckinScanner}" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" WidthRequest="300" HeightRequest="70" CornerRadius="10" FontSize="30" Margin="40"/>
+            <Label Text="請掃描活動現場提供的工作組別QR Code" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" FontAttributes="Bold" FontSize="Small"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

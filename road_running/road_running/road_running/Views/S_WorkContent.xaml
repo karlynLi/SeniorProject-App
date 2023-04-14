@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage
+      xmlns="http://xamarin.com/schemas/2014/forms"
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
+      xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+      xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"     
+      x:Class="road_running.Views.S_WorkContent">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+            PositionIn="Center"
+            PositionOut="Center"
+            ScaleIn="1.2"
+            ScaleOut="0.8"
+            DurationIn="400"
+            DurationOut="300"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>
+    <StackLayout VerticalOptions="Center"  Padding="20,0" HorizontalOptions="FillAndExpand" >
+        <Frame CornerRadius="10" Padding="0" BackgroundColor="#d6e6f2" HeightRequest="500">
+            <!-- place your layout content here ....fx a close popup button -->
+            <ListView ItemsSource="{Binding ReturnList}" HasUnevenRows="True" SeparatorVisibility="None" Margin="10">
+                <ListView.Header>
+                    <StackLayout Orientation="Horizontal" >
+                        <Label Text="詳細工作內容" FontSize="30" FontAttributes="Bold" Padding="10"/>
+                    </StackLayout>
+                </ListView.Header>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ContentView Padding="10">
+                                <StackLayout>
+                                    <Label Text="{Binding Content}" FontSize="24" FontAttributes="Bold" TextColor="{StaticResource Primary}"/>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding GetTime}" FontSize="18"/>
+                                        <Label Text="{Binding Place}" FontSize="18"/>
+                                        </StackLayout>
+                                </StackLayout>
+                            </ContentView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+                <ListView.Footer>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="10">
+                        <Button Text="OK" BackgroundColor="{StaticResource Primary}" FontSize="20" CornerRadius="5" Clicked="CloseBtn_Clicked"/>
+                    </StackLayout>
+                </ListView.Footer>
+            </ListView>
+        </Frame>
+    </StackLayout>
+</pages:PopupPage>

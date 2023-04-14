@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="road_running.Views.LoginPage"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+            <RowDefinition Height=".5*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height=".4*"></RowDefinition>
+            <RowDefinition Height=".4*"></RowDefinition>
+            <RowDefinition Height=".4*"></RowDefinition>
+            <RowDefinition Height=".1*"></RowDefinition>
+            <RowDefinition Height=".5*"></RowDefinition>
+            <RowDefinition Height=".8*"></RowDefinition>
+        </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Source="runner.png" HorizontalOptions="Center"></Image>
+            <Label Text="Let's RUNs" FontSize="30" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" HorizontalOptions="Center"></Label>
+            <Button x:Name="member" VerticalOptions="Center" Text="會員" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="4" FontSize="20" CornerRadius="35" Clicked="MLogin"/>
+            <Button x:Name="staff" VerticalOptions="Center" Text="工作人員" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="4" FontSize="20" CornerRadius="35" Clicked="SLogin"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
+<!--<Button x:Name="member" VerticalOptions="Center" Text="會員" Command="{Binding LoginCommand}"/>
+<Button x:Name="staff" VerticalOptions="Center" Text="工作人員" Command="{Binding SLoginCommand}"/>-->

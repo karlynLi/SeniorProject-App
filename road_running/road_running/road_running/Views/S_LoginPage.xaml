@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="road_running.Views.S_LoginPage"
+             Title="工作人員登入">
+    <ContentPage.Content>
+        <StackLayout Margin="30">
+            <Image Source="staff.png" HorizontalOptions="Center"></Image>
+            <Label Text="Let's RUN" FontSize="30" HorizontalOptions="Center"></Label>
+            <Label Text="Staff_ID" FontSize="Small" HorizontalOptions="Start" TextColor="#769fcd"></Label>
+            <Entry x:Name="staffid" ClearButtonVisibility="WhileEditing"/>
+            <Label Text="Password" FontSize="Small" HorizontalOptions="Start" TextColor="#769fcd"></Label>
+            <Entry x:Name="UserPassword" IsPassword="true" ClearButtonVisibility="WhileEditing"/>
+            <Button Text="登入" FontSize="20" CornerRadius="30" Clicked="SLogin" HorizontalOptions="Center" WidthRequest="150" Margin="10"/>
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="label"
+                   Text="忘記密碼?"
+                   FontSize="15"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand" 
+                    BorderWidth="0"
+                    BackgroundColor="#0000ffff"
+                    TextColor="#395687"
+                    Clicked="SForget"/>
+                <Button x:Name="label1"
+                   Text="申請帳號"
+                   FontSize="15"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="CenterAndExpand" 
+                    BorderWidth="0"
+                    BackgroundColor="#0000ffff"
+                    TextColor="#395687"
+                    Clicked="SEnroll"/>
+            </StackLayout>
+        </StackLayout>
+        <!--<Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height=".5*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height=".4*"></RowDefinition>
+                <RowDefinition Height=".2*"></RowDefinition>
+                <RowDefinition Height=".3*"></RowDefinition>
+                <RowDefinition Height=".2*"></RowDefinition>
+                <RowDefinition Height=".3*"></RowDefinition>
+                <RowDefinition Height=".4*"></RowDefinition>
+                <RowDefinition Height=".4*"></RowDefinition>
+                <RowDefinition Height=".8*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Source="staff.png" HorizontalOptions="Center"></Image>
+            <Label Text="Let's RUN" FontSize="30" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" HorizontalOptions="Center"></Label>
+            <Label Text="Staff_ID" FontSize="Small" Grid.Row="3" Grid.Column="1" HorizontalOptions="Start" TextColor="#769fcd"></Label>
+            <Entry x:Name="staffid" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="4" ClearButtonVisibility="WhileEditing"/>
+            <Label Text="Password" FontSize="Small" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" HorizontalOptions="Start" TextColor="#769fcd"></Label>
+            <Entry x:Name="UserPassword" IsPassword="true" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="4" ClearButtonVisibility="WhileEditing"/>
+            <Button x:Name="label" Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="2"
+               Text="忘記密碼?"
+               FontSize="15"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center" 
+                BorderWidth="0"
+                BackgroundColor="#0000ffff"
+                TextColor="#395687"
+                    Clicked="SForget"/>
+            <Button x:Name="label1" Grid.Row="8" Grid.Column="3" Grid.ColumnSpan="2"
+               Text="申請帳號"
+               FontSize="15"
+               VerticalOptions="CenterAndExpand"
+               HorizontalOptions="Center" 
+                BorderWidth="0"
+                BackgroundColor="#0000ffff"
+                TextColor="#395687"
+                Clicked="SEnroll"/>
+            <Button Text="登入" Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="2" FontSize="20" CornerRadius="30" Clicked="SLogin"/>
+        </Grid>-->
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="road_running.Views.ShowQrPage"
+             xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             xmlns:zxingCommon="clr-namespace:ZXing.Common;assembly=zxing.portable" Title="{Binding Title}">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions >
+                <RowDefinition Height=".5*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height=".7*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0"></Label>
+            <zxing:ZXingBarcodeImageView x:Name="qrcode" BarcodeValue="no ID" WidthRequest="500" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4"
+                                     HeightRequest="500">
+                <zxing:ZXingBarcodeImageView.BarcodeOptions>
+                    <zxingCommon:EncodingOptions Height="500" Width="500"/>
+                </zxing:ZXingBarcodeImageView.BarcodeOptions>
+            </zxing:ZXingBarcodeImageView>
+            <Label Text="請將Qrcode拿給工作人員掃描" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" HorizontalOptions="Center" FontSize="20"></Label>
+
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

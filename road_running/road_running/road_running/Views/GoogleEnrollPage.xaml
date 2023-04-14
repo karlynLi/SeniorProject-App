@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="road_running.Views.GoogleEnrollPage"
+    Title="Google登入填寫基本資訊">
+    <ContentPage.Content>
+        <ScrollView VerticalOptions="Center" BackgroundColor="#f7fbfc">
+            <StackLayout Margin="20,0">
+                <Label Text="填寫會員資料" FontSize="30" HorizontalTextAlignment="Start" Margin="0,20"></Label>
+                <Label Text="姓名"></Label>
+                <Entry x:Name="Name" FontSize="20"/>
+                <Label Text="電話"></Label>
+                <Entry x:Name="Phone" FontSize="20"/>
+                <Label Text="身分證字號"></Label>
+                <Entry x:Name="IdCard" FontSize="20"/>
+                <Label Text="生日"></Label>
+                <DatePicker x:Name="Birth" Format="yyyy-MM-dd" DateSelected="Choose_birth"></DatePicker>
+                <Label Text="地址"></Label>
+                <Entry x:Name="Address" FontSize="20"/>
+                <Label Text="緊急聯絡人姓名" ></Label>
+                <Entry x:Name="Contact_name" FontSize="20"/>
+                <Label Text="緊急聯絡人電話"></Label>
+                <Entry x:Name="Contact_phone" FontSize="20"/>
+                <Label Text="與會員之關係"></Label>
+                <Entry x:Name="Relation" FontSize="20"/>
+                <StackLayout Orientation="Horizontal" Margin="0,20">
+                    <Button  Text="取消" FontSize="20" Clicked="Cancel" HorizontalOptions="CenterAndExpand"  />
+                    <Button  Text="送出" FontSize="20" Clicked="EnrollClicked" HorizontalOptions="CenterAndExpand"  />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+  <item>
+    <color android:color="@color/splash_bg"/>
+  </item>
+  <item>
+    <bitmap
+        android:src="@drawable/cat"
+        
+        android:tileMode="disabled"
+        android:gravity="center_vertical"/>
+  </item>
+</layer-list>
+<!--圖層清單-->

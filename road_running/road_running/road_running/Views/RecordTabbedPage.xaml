@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:road_running.Views" 
+            x:Class="road_running.Views.RecordTabbedPage" 
+            Title="活動紀錄" 
+            BarBackgroundColor="{StaticResource Primary}">
+
+    <local:RecordPage1 />
+    <local:RecordPage2 />
+    <local:RecordPage3 />
+</TabbedPage>

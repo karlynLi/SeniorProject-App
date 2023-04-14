@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="road_running.Views.SupplyLocationPage"
+             BackgroundColor="#f7fbfc"
+             Title="補給站位置"
+             Icon="supplystation.png">
+
+    <!--<ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="10, 20, 10, 0" />
+            <On Platform="Android, UWP" Value="0, 0" />
+        </OnPlatform>
+    </ContentPage.Padding>-->
+
+    <ContentPage.Content>
+        <StackLayout Margin="10,10">
+            <!--<Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.8*"/>
+                    <RowDefinition Height="6*"/>
+                </Grid.RowDefinitions>
+                <Label Text="尚無報名資料" IsVisible="{Binding Text_Isvisible}" Grid.Row="0" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" Margin="10"/>
+                <Picker x:Name="pickAct" IsVisible="{Binding Picker_Map_Isvisible}" Title="選擇路跑活動" Grid.Row="0" ItemsSource="{Binding GetRouteList}" ItemDisplayBinding="{Binding Name}" SelectedIndex="{Binding SelectedRoute}" SelectedIndexChanged="Change_select" />
+                <maps:Map x:Name="map" IsVisible="{Binding Picker_Map_Isvisible}" IsShowingUser="True" WidthRequest="500" Grid.Row="1" Margin="0, 5, 0, 5" MapType="Street"/>
+
+            </Grid>-->
+            <Label Text="尚無報名資料" IsVisible="{Binding Text_Isvisible}" FontAttributes="Bold" FontSize="Large" HorizontalOptions="Center" Margin="10"/>
+            <Picker x:Name="pickAct" IsVisible="{Binding Picker_Map_Isvisible}" Title="選擇路跑活動" ItemsSource="{Binding GetRouteList}" ItemDisplayBinding="{Binding Name}" SelectedIndex="{Binding SelectedRoute}" SelectedIndexChanged="Change_select" />
+            <BoxView IsVisible="{Binding Picker_Map_Isvisible}" BackgroundColor="#769fcd" HeightRequest="2"/>
+            <maps:Map x:Name="map" IsVisible="{Binding Picker_Map_Isvisible}" IsShowingUser="True" WidthRequest="500" Margin="0, 5, 0, 5" MapType="Street"/>
+            <BoxView IsVisible="{Binding Picker_Map_Isvisible}" BackgroundColor="#769fcd" HeightRequest="2"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
